@@ -1,4 +1,3 @@
-// tailwind.config.cjs
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,41 +5,35 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {
-      // Active les opacités pour TOUTES les couleurs
-      opacity: {
-        20: "0.20",
-      },
-      // Force la génération des variantes /20
-      ringOpacity: {
-        20: "0.20",
-      },
-    },
+    extend: {},
   },
   plugins: [
-    require("daisyui"),
+    require('daisyui'),
   ],
   daisyui: {
     themes: [
       {
         light: {
-          primary: "#3b82f6",
-          "primary-focus": "#2563eb",
-          "primary-content": "#ffffff",
+          "primary": "#3b82f6",    // bleu
+          "secondary": "#8b5cf6",
+          "accent": "#f59e0b",
+          "neutral": "#1f2937",
+          "base-100": "#ffffff",
+          "base-200": "#f3f4f6",
+          "base-300": "#e5e7eb",
+          "info": "#0ea5e9",
+          "success": "#10b981",
+          "warning": "#f59e0b",
+          "error": "#ef4444",
         },
       },
-      {
-        dark: {
-          primary: "#60a5fa",
-          "primary-focus": "#3b82f6",
-          "primary-content": "#ffffff",
-        },
-      },
+      "dark",
+      "cupcake",
     ],
     darkTheme: "dark",
-    styled: true,
     base: true,
+    styled: true,
     utils: true,
-    logs: false,
+    logs: true,
   },
 };
