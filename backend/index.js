@@ -78,9 +78,10 @@ app.use(errorHandler);
 
 // --- DÉMARRAGE SERVEUR ---
 const PORT = process.env.PORT || 3000;
+URL_BASE = process.env.URL_BASE || `http://localhost:${PORT}`;
 app.listen(PORT, () => {
-  console.log(`Serveur démarré sur http://localhost:${PORT}`);
-  console.log(`Documentation : http://localhost:${PORT}/docs`);
+  console.log(`Serveur démarré sur ${URL_BASE}`);
+  console.log(`Documentation : ${URL_BASE}/docs`);
   console.log(`Environnement : ${process.env.NODE_ENV || 'development'}`);
   console.log(`MongoDB : ${MONGO_URI.includes('mongodb.net') ? 'Atlas (cloud)' : 'Local'}`);
 });
